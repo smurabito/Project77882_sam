@@ -5,6 +5,7 @@ public class Cave extends Location{
     private String description; 
     private int x; 
     private int y;
+    private int hi; 
 
     /**
      * Constructor 
