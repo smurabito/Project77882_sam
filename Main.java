@@ -70,27 +70,11 @@ public class Main{
                 System.out.println("I don't know that pokemon. Try again. Your options are: vulpix, psyduck, or pikachu."); 
                 starter = input.nextLine(); 
             }
-            
+             
+            farm.setHere(true);
             //
             System.out.println(border); 
-            System.out.println("You have your starter. What would you like to do now? You can use the command 'look' to look around and figure out what you'd like to do.");
-            answer = scanner.nextLine(); 
-            loop = false;
-            while (!loop){ 
-                if (answer.toLowerCase().equals("look")){
-                    System.out.println(farm.look());
-                    loop = true; 
-                } else {
-                    System.out.println("I don't know that command. You can use the command 'see pokemon' to see your pokemon. You can look around using the command 'look'"); 
-                    answer = scanner.nextLine(); 
-                }
-
-            }
-            System.out.print("Look around"); 
-            answer = scanner.nextLine(); 
-            if (answer.toLowerCase().equals("see pokemon")){
-                farm.seePokemon();
-            }
+            farm.play();            
 
         }
 
