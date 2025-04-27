@@ -1,4 +1,3 @@
-import java.util.EnumMap;
 import java.util.Scanner;
 public class Main{
     public static void main(String[] args) {
@@ -13,7 +12,7 @@ public class Main{
 
         //
         Farm farm = new Farm("Farm");//Make player's farm
-        farm.setDescription("It's your farm!\nThere's an old farmhouse where you live with grandpa. A beautiful, sunny, fenced in yard. There are some oran berry bushes along the fence.\nYou can look at your pokemon using the command 'see pokemon'."); 
+        farm.setDescription("\nIt's your farm!\nYou see an old farmhouse where you live with grandpa along with a beautiful, sunny, fenced in yard. There are some Oran berry bushes along the fence."); 
 
         
         
@@ -27,47 +26,46 @@ public class Main{
         playerName = input.nextLine();
 
         Player player = new Player(playerName); 
-
-        System.out.print("Hello, ");
-        System.out.print(player.getName());
-        System.out.println("! Welcome to your Pokemon Farm!"); 
-        System.out.println("You live here with yout grandfather. Now that you're finally ten years old, your grandfather is going to let you help out on the pokemon farm.");
-        System.out.println("Your grandpa has tasked you with recruiting local pokemon for the farm. You can explore the areas around the farm to discover new pokemon, new items, and townspeople!"); 
-        System.out.println("It's morning-time. Are you ready to get up? (Press enter)"); 
+        System.out.print("Hello " + player.getName() + "! Welcome to your Pokemon Farm");
+        System.out.println("\nYou live here with yout grandfather. Now that you're finally ten years old, your grandfather is going to let you help out on the Pokemon farm.");
+        System.out.println("\nYour grandfather has tasked you with recruiting local Pokemon for the farm. You can explore the areas around the farm to discover new Pokemon, new items, and townspeople!"); 
+        System.out.println("\nIt's morning. Are you ready to get up? (Press enter)"); 
         Scanner scanner = new Scanner(System.in); 
         String answer = scanner.nextLine(); 
         System.out.print(answer); 
+        
         //Pick a starter
         System.out.print(border);
-        System.out.println("Your grandpa wakes you up for breakfast, and he cooks your favorite.");
-        System.out.println("After breakfast, he says to you: 'It's time to choose your first pokemon. Choose wisely.'"); 
-        System.out.println("You follow him onto the front porch and see three pokemon waiting for you."); 
-        System.out.println("On the left there's a pikachu, a small yellow mouse-like creature with electric powers. It says 'pika pika' and smiles at you."); 
-        System.out.println("In the middle there's a vulpix, a small red fox-like creature with the power of fire. It chirps and rubs against your lag happily."); 
-        System.out.println("On the right there's a psyduck, a yellow duck with psychic powers. You look into it's eyes and feel worried."); 
-        System.out.println("Who do you choose?");
+        System.out.println("\nYour grandfather wakes you up for breakfast and he cooks your favorite!");
+        System.out.println("\nAfter breakfast he tells you: 'It's time to choose your first Pokemon. Choose wisely.'"); 
+        System.out.println("\nYou follow him onto the front porch and see three Pokemon waiting for you."); 
+        System.out.println("\nOn the left there's a Pikachu, a small yellow mouse-like creature with electric powers. It says 'pika pika' and smiles at you."); 
+        System.out.println("\nIn the middle there's a Vulpix, a small red fox-like creature with the power of fire. It chirps and rubs against your lag happily."); 
+        System.out.println("\nOn the right there's a psyduck, a yellow duck with psychic powers. You look into it's eyes and feel worried."); 
+        System.out.println("\nWho do you choose?");
         System.out.print(border);
+
         //user input
         String starter = input.nextLine(); 
         boolean loop = false; 
         while (!loop){
             if (starter.toLowerCase().equals("vulpix")){
-                System.out.println("Great Choice! Vulpix is excited to be your first pokemon, and can't wait to live on your farm.");
+                System.out.println("\nGreat choice! Vulpix is excited to be your first pokemon, and can't wait to live on your farm.");
                 player.addStarter(vulpix);
                 farm.addPokemon(vulpix);
                 loop = true; 
             } else if (starter.toLowerCase().equals("psyduck")){
-                System.out.println("Great Choice! Psyduck looks less confused, and can't wait to live on your farm.");
+                System.out.println("\nGreat choice! Psyduck looks less confused, and can't wait to live on your farm.");
                 player.addStarter(pysduck);
                 farm.addPokemon(pysduck);
                 loop = true; 
             } else if (starter.toLowerCase().equals("pikachu")){
-                System.out.println("Great Choice! Pikachu runs around in excitement, and can't wait to live on your farm.");
+                System.out.println("\nGreat choice! Pikachu runs around in excitement, and can't wait to live on your farm.");
                 player.addStarter(pikachu);
                 farm.addPokemon(pikachu);
                 loop = true; 
             } else {
-                System.out.println("I don't know that pokemon. Try again. Your options are: vulpix, psyduck, or pikachu."); 
+                System.out.println("\nI don't know that Pokemon. Try again. Your options are: Vulpix, Psyduck, or Pikachu."); 
                 starter = input.nextLine(); 
             }
              
