@@ -1,9 +1,15 @@
 import java.util.Scanner;
 public class Main{
+    static Player player;
+    static Beach beach = new Beach("Beach");
+    static Farm farm = new Farm("Farm");
+    //static Cave cave = new Cave("Cave");
+    //static Forest forest = new Forest("forest");
+    //static Field field = new Field("Field");
+
     public static void main(String[] args) {
         //Stuf 
         String border = "=====================================\n";
-
 
         //Set up
         Pokemon pikachu = new Pokemon("Pikachu"); 
@@ -11,11 +17,7 @@ public class Main{
         Pokemon pysduck = new Pokemon("Psyduck"); 
 
         //
-        Farm farm = new Farm("Farm");//Make player's farm
         farm.setDescription("\nIt's your farm!\nYou see an old farmhouse where you live with grandpa along with a beautiful, sunny, fenced in yard. There are some Oran berry bushes along the fence."); 
-
-        
-        
         
         //Game loop 
         String playerName; 
@@ -25,7 +27,7 @@ public class Main{
         System.out.println("Hello player! What's your name?");
         playerName = input.nextLine();
 
-        Player player = new Player(playerName); 
+        player = new Player(playerName); 
         System.out.print("Hello " + player.getName() + "! Welcome to your Pokemon Farm");
         System.out.println("\nYou live here with yout grandfather. Now that you're finally ten years old, your grandfather is going to let you help out on the Pokemon farm.");
         System.out.println("\nYour grandfather has tasked you with recruiting local Pokemon for the farm. You can explore the areas around the farm to discover new Pokemon, new items, and townspeople!"); 

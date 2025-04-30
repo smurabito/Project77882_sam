@@ -5,11 +5,16 @@ import java.util.Scanner;
 public class Farm extends Location{
     public ArrayList<Pokemon> farmPokemon;
     public boolean here = false; 
-    
+
     public Farm(String name) {
-        super(name, 0, 0); 
+        super(name); 
         this.farmPokemon = new ArrayList<>();
        }
+
+    public void returnFarm(){
+        
+    }
+
 
     public void addPokemon(Pokemon pokemon) {
         farmPokemon.add(pokemon);
@@ -56,7 +61,6 @@ public class Farm extends Location{
 
     //inventory of pokemon
     //ability to interact with pokemon
-
 
     public void play(){
         Scanner scanner = new Scanner(System.in); 
