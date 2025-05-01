@@ -17,7 +17,7 @@ public class Main{
         Pokemon pysduck = new Pokemon("Psyduck"); 
 
         //
-        farm.setDescription("\nIt's your farm!\nYou see an old farmhouse where you live with grandpa along with a beautiful, sunny, fenced in yard. There are some Oran berry bushes along the fence."); 
+        farm.setDescription("\nIt's your farm!\n\nYou see an old farmhouse where you live with grandpa along with a beautiful, sunny, fenced in yard. There are some Oran berry bushes along the fence.\n"); 
         
         //Game loop 
         String playerName; 
@@ -43,7 +43,7 @@ public class Main{
         System.out.println("\nYou follow him onto the front porch and see three Pokemon waiting for you."); 
         System.out.println("\nOn the left there's a Pikachu, a small yellow mouse-like creature with electric powers. It says 'pika pika' and smiles at you."); 
         System.out.println("\nIn the middle there's a Vulpix, a small red fox-like creature with the power of fire. It chirps and rubs against your lag happily."); 
-        System.out.println("\nOn the right there's a psyduck, a yellow duck with psychic powers. You look into it's eyes and feel worried."); 
+        System.out.println("\nOn the right there's a Psyduck, a yellow duck with psychic powers. You look into it's eyes and feel worried."); 
         System.out.println("\nWho do you choose?");
         System.out.print(border);
 
@@ -55,16 +55,19 @@ public class Main{
                 System.out.println("\nGreat choice! Vulpix is excited to be your first pokemon, and can't wait to live on your farm.");
                 player.addStarter(vulpix);
                 farm.addPokemon(vulpix);
+                System.out.println("\nVulpix has been added to your farm inventory. Explore the following options to see what to do next!");
                 loop = true; 
             } else if (starter.toLowerCase().equals("psyduck")){
                 System.out.println("\nGreat choice! Psyduck looks less confused, and can't wait to live on your farm.");
                 player.addStarter(pysduck);
                 farm.addPokemon(pysduck);
+                System.out.println("\nPsyduck has been added to your farm inventory. Explore the following options to see what to do next!");
                 loop = true; 
             } else if (starter.toLowerCase().equals("pikachu")){
                 System.out.println("\nGreat choice! Pikachu runs around in excitement, and can't wait to live on your farm.");
                 player.addStarter(pikachu);
                 farm.addPokemon(pikachu);
+                System.out.println("\nPikachu has been added to your farm inventory. Explore the following options to see what to do next!");
                 loop = true; 
             } else {
                 System.out.println("\nI don't know that Pokemon. Try again. Your options are: Vulpix, Psyduck, or Pikachu."); 

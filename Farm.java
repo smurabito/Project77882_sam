@@ -12,21 +12,21 @@ public class Farm extends Location{
        }
 
     public void returnFarm(){
-        
+
     }
 
 
     public void addPokemon(Pokemon pokemon) {
         farmPokemon.add(pokemon);
-        System.out.println(pokemon.getName() + " has been added to the farm.");
+        System.out.println(pokemon.getName() + " has been added to the farm.\n");
     }
 
     public void seePokemon(){
         for (int i = 0; i < farmPokemon.size(); i++ ){
             System.out.print("\nYour farm has a "); 
             System.out.println(farmPokemon.get(i).getName()); 
-            System.out.println("\nWhat would you like to do now?\n\nYou can use the command 'look' to look around the farm, 'see pokemon' to see your current Pokemon, or 'leave' to leave the farm and begin your adventure!");
         }
+       play();
     }
 
     public void setHere(boolean here){
@@ -42,7 +42,8 @@ public class Farm extends Location{
             String answer = scanner.nextLine(); 
             if (answer.toLowerCase().equals("beach")){
                 System.out.println("\nYou are now at the beach.");
-                
+                Beach beach = new Beach("Beach");
+                beach.playBeach();
                 move = true; 
             } else if (answer.toLowerCase().equals("cave")){
                 System.out.println("\nYou are now at the cave.");
@@ -64,15 +65,15 @@ public class Farm extends Location{
 
     public void play(){
         Scanner scanner = new Scanner(System.in); 
-        System.out.println("You have your starter. What would you like to do now?\n\nYou can use the command 'look' to look around the farm, 'see pokemon' to see your current Pokemon, or 'leave' to leave the farm and begin your adventure!");
-
+        System.out.println("\nWhat would you like to do now?\n\nYou can use the command 'look' to look around the farm, 'see pokemon' to see your current Pokemon, or 'leave' to leave the farm and begin your adventure!");
+        boolean here=true;
         while (here == true){
             String answer = scanner.nextLine(); 
             boolean loop = false;
             while (!loop){ 
                 if (answer.toLowerCase().equals("look")){
                     System.out.println(this.look());
-                    System.out.println("\nWhat would you like to do now?\n\nYou can use the command 'look' to look around the farm, 'see pokemon' to see your current Pokemon, or 'leave' to leave the farm and begin your adventure!");
+                    System.out.println("What would you like to do now?\n\nYou can use the command 'look' to look around the farm, 'see pokemon' to see your current Pokemon, or 'leave' to leave the farm and begin your adventure!");
                     loop = true; 
                 } else if (answer.toLowerCase().equals("see pokemon")){
                     this.seePokemon();
