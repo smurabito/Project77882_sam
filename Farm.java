@@ -47,12 +47,18 @@ public class Farm extends Location{
                 move = true; 
             } else if (answer.toLowerCase().equals("cave")){
                 System.out.println("\nYou are now at the cave.");
+                Cave cave = new Cave("Cave");
+                cave.playCave();
                 move = true; 
             } else if (answer.toLowerCase().equals("field")){
                 System.out.println("\nYou are now at the field.");
+                Field field = new Field("Field");
+                field.playField();
                 move = true; 
             } else if (answer.toLowerCase().equals("forest")){
                 System.out.println("\nYou are now at the forest.");
+                Forest forest = new Forest("Forest");
+                forest.playForest();
                 move = true; 
             } else {
                 System.out.println("\nI don't know that command. Please type in 'beach', 'cave', 'forest', or 'field'."); 
@@ -81,7 +87,7 @@ public class Farm extends Location{
                 } else if (answer.toLowerCase().equals("leave")){
                     this.leave(scanner);
                     loop = true; 
-                    scanner.close();
+                    //scanner.close();
                 }
                 else {
                     System.out.println("I don't know that command. You can use the command 'see pokemon' to see your pokemon. You can look around using the command 'look'"); 

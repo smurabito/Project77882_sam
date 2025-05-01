@@ -2,7 +2,6 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Beach extends Location{ 
-//do we need location anymore since we aren't doing coordinates?
     Random random = new Random();
     int randomNumber = random.nextInt(10);
         
@@ -71,10 +70,10 @@ public class Beach extends Location{
                 Scanner stayRun = new Scanner(System.in); 
                 String userChoice = stayRun.nextLine();
                 if (userChoice.toLowerCase().equals("y")) {
-                    int randomWag = random.nextInt(3);
-                    if (randomWag == 1){
+                    int randomDit = random.nextInt(3);
+                    if (randomDit == 1){
                         System.out.println("\nYou caught a Ditto! Congratulations!");
-                        System.out.println("\nDittohas been sent back to your farm. You will return to your farm now!\n");
+                        System.out.println("\nDitto has been sent back to your farm. You will return to your farm now!\n");
                         Main.farm.addPokemon(ditto);
                         Main.farm.play();
                     } else {
@@ -90,10 +89,4 @@ public class Beach extends Location{
             }
         }
     }
-
-
-//we can have the random odds generator, if statements in a loop?
-// possible outcomes at the beach:
-// 1. encounter a magikarp (maybe 1/3 odds?)
-// 2. encounter a 
 
